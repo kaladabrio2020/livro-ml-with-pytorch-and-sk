@@ -1,0 +1,2 @@
+# BookMachineLearningWithPyTorchAndScikitLearn
+progresso em cada capitulo
