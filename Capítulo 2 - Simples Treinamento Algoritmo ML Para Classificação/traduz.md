@@ -27,3 +27,22 @@ VIa the fit method, we initialize the vies b to an initial value 0 and weights i
 technically, we could initialize the weight to zero. However, if we did that , then the learning rate would have no effect on the decision boundary. If all the weights are initialized to zero, the learning rate parameter, eta, affects only the scale of the weght vecto , not the direction. If you are familiar with trigonometry , consider a vector.
 here np.arccos is the trigonometry inverse cosine , and np.linalg.norm is a function that computes the length of a vector. 
 as an optimal exercise after reading this chapter , you change self.wb and. you will obseve that the decision boundary does not change.
+
+
+In this two dimensional feature subspace, we can see that a linear decision boundary should be sufficient to separate setosa from versicolor flowers. thus, a linear classifier such as the perceptron should be able to classfy the flowers in this dataset perfecty.
+Now, it's time to train our perceptron algortihm on the iris data subset that we just extracted. also,we will plot the misclassification error for each epoch to check whether the algorithm conveged and found a decision boundary that separetes the two iris flowers classes.
+Note that the number of misclassication errors and the number of updates is the same, since the perceptron weights and vies are updated each time if misclassifies an example. After executing the preceding code, we should see the plot of the misclassification errors versus the number of epochs.
+As we can see 2.7,our perceptron converged after the sixth epoch and should now be able to classify the training examples perfectly.
+
+
+### Adaptive linear neurons and the convergence of learning
+In this section, we will take a look at another type of single layer neural network: Adaptive linear neuron(ADALINE). Adaline was publishe by Bernard and his doctoral sdudent tedd hoff only a few after Rosenblatt perceptron algorithm , and it can be considered an improvement on the latter.
+The Adaline algorithm is particularly interesting because it illustrates the key concepts of defining and minimizing continuous loss functions.
+This lays the groundwork for undestanding other machine learning algorithms for classification, such as logistic regression ,svm,and multilayer neural networks, as well as linear regression models, which we will  discuss in future chapters.
+The keys difference between the adaline rule and perceptron is the the weights are updated based on a linear activation function rather than a unit step function like in the perceptron. In adaline this linear activation function o(z) is simply the identity on function of the net input so that o(z)=z;
+
+Minimizing loss functions with gradient descent
+One of the key ingredients of supervised machine learning algorithms is a defined objective function
+that is to be optimized during the learning process. This objective function is often a loss or cost function
+that we want to minimize. In the case of Adaline, we can define the loss function, L, to learn the model
+parameters as the mean squared error (MSE) between the calculated outcome and the true class label:
